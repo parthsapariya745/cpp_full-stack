@@ -14,24 +14,19 @@ int main(){
         multi = user * 0.50;
     }
     
-    else if(user > 50 && user <= 100){
+    else if(user > 50 && user <= 150){
         multi = 25;
         sub = (user - 50) * 0.75;        
     }  
 
-    else if(user > 100 && user <= 150){
-        multi = 25 + 75;
-        sub = (user - 100) * 0.75;
-    }
-
-    else if(user > 150 && user <= 250){
+    else if(user > 150 && user <= 300){
         multi = 25 + 75; 
         sub = (user - 150) * 1.20;
     }
 
     else{
         multi = 25 + 75 + 180;
-        sub = (user - 50 - 250) * 1.50;
+        sub = (user - 300) * 1.50;
     }
 
     sum = sub + multi;
