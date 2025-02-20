@@ -3,7 +3,7 @@ using namespace std;
 
 int main(){
     int user,sub = 0,multi = 0,sum = 0,total = 0;
-
+    
     cout << "Enter your unit: ";
     cin >> user;
 
