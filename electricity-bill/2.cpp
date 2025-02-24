@@ -2,21 +2,17 @@
 using namespace std;
 
 int main(){
-    int user;
+    int maths,english,science;
 
-    cout << "Enter any number: ";
-    cin >> user;
+    cout << "Enter maths marks: ";
+    cin >> maths;
 
-    if (user < 0)
-    {
-        cout << "The number is Negative";
-    }
-    else if (user == 0)
-    {
-        cout << "The number is Neutral";
-    }
-    else
-    {
-        cout << "The number is Positive";
-    }
+    cout << "Enter english marks: ";
+    cin >> english;
+
+    cout << "Enter science marks: ";
+    cin >> science;
+
+    float avg = float(maths + english + science)/3;
+    cout << "Average mark: " << avg;
 }

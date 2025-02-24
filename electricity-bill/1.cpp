@@ -2,20 +2,21 @@
 using namespace std;
 
 int main(){
-    int a,b;
+    int user;
 
-    cout << "Enter first value: ";
-    cin >> a;
+    cout << "Enter any number: ";
+    cin >> user;
 
-    cout << "Enter second value: ";
-    cin >> b;
-
-    if (a < b)
+    if (user < 0)
     {
-        cout << "The minimum value is: " << a;
+        cout << "The number is Negative";
+    }
+    else if (user == 0)
+    {
+        cout << "The number is Neutral";
     }
     else
     {
-        cout << "The minimum value is: " << b;
+        cout << "The number is Positive";
     }
 }
