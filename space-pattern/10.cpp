@@ -8,11 +8,11 @@ int main(){
         {
             cout << "- ";
         }
-        for (int col = 1; col <= row; col++)
+        for (int col = 1; col < row; col++)
         {
             cout << col << " ";
         }
-        for (int col = row - 1; col >= 1; col--)
+        for (int col = row; col >= 1; col--)
         {
             cout << col << " ";
         }
