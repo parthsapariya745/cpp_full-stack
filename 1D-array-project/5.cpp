@@ -33,4 +33,5 @@ int main()
             cout << box[i] << " ";
         }
     }
+    size--;
 }
