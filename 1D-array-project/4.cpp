@@ -9,22 +9,17 @@ int main()
     cin >> size;
 
     int box[size];
-    for (int i = 0; i < size; i++)
-    {
+    for (int i = 0; i < size; i++) {
         cout << "box[" << i << "] = ";
         cin >> box[i];
     }
-    for (int i = 0; i < size; i++)
-    {
-        if (box[i] > max1)
-        {
+    for (int i = 0; i < size; i++) {
+        if (box[i] > max1) {
             max1 = box[i]; 
         }
     }
-    for (int i = 0; i < size; i++)
-    {
-        if (box[i] != max1 && box[i] > max2)
-        {
+    for (int i = 0; i < size; i++) {
+        if (box[i] != max1 && box[i] > max2) {
             max2 = box[i];
         }
     }

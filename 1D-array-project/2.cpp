@@ -9,9 +9,7 @@ int main()
     cin >> size;
 
     int box[size];
-
-    for (int i = 0; i < size; i++)
-    {
+    for (int i = 0; i < size; i++) {
         cout << "box[" << i << "] = ";
         cin >> box[i];
         if(box[i] > max){
