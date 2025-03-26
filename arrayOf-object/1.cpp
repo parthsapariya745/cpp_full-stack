@@ -28,11 +28,11 @@ public:
 };
 int main()
 {
-    teacher t[5];
+    teacher t[3];
     string nm,sub;
     int sly,a,exp;
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 3; i++)
     {
         cout << "Enter teacher Name: ";
         cin >> nm;
