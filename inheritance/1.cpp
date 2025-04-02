@@ -16,16 +16,12 @@ class parth : public student {
     
     parth(string name, int age) : student(name) {
         this->age = age;
-    }
-    void display() {
         cout << "My name is: " << name << endl;
         cout << "Age is " << age << " years old" << endl; 
     }
 };
-
 int main() {
     parth s1("parth sapariya",18);
-    s1.display();
 }
 //     parent
 
