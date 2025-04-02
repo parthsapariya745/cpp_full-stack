@@ -16,7 +16,8 @@ public:
         this->year = year;
         this->budget = budget;
         this->collection = collection;
-
+    }
+    void get() {
         cout << "Movie name is " << this->movieName << endl;
         cout << "Movie Hero name is " << this->heroName << endl;
         cout << "Movie release year is " << this->year << endl; 
@@ -33,4 +34,10 @@ int main() {
     sandalwood.set("KGF: Chapter 2","Yash",2022,125,1250.55);
     tollywood.set("Pushpa 2","Allu Arjun",2024,400,1738);
     kollywood.set("2.0","Rajnikanth",2018,400,800);
+
+    bollywood.get();
+    hollywood.get();
+    sandalwood.get();
+    tollywood.get();
+    kollywood.get();
 }
