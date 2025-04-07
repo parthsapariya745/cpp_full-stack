@@ -1,58 +1,65 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
-    char user;
-    while (user != 0)
+void calculator() {
+    int user;
+    do
     {
-        cout << "Press + for Addition" << endl;
-        cout << "Press - for Subtraction" << endl;
-        cout << "Press * for Multiplication" << endl;
-        cout << "Press / for Divison" << endl;
-        cout << "Press % for Mode" << endl;
+        cout << "Press 1 for Addition" << endl;
+        cout << "Press 2 for Subtraction" << endl;
+        cout << "Press 3 for Multiplication" << endl;
+        cout << "Press 4 for Divison" << endl;
+        cout << "Press 5 for Mode" << endl;
         cout << "press 0 for exit" << endl;
         cout << "------------------------------------" << endl;
 
+        cout << "Enter your number: ";
+        cin >> user;
+
+        int a, b;
+
+        cout << "a = ";
+        cin >> a;
+        cout << "b = ";
+        cin >> b;
         switch (user)
         {
-            int a, b;
-
-            cout << "Enter your calculator sign: ";
-            cin >> user;
-
-            cout << "a = ";
-            cin >> a;
-            cout << "b = ";
-            cin >> b;
-            
-        case '+':
+        case 1:
             cout << "a + b = " << a + b << endl;
+            cout << "------------------------------------" << endl;
             break;
 
-        case '-':
+        case 2:
             cout << "a - b = " << a - b << endl;
+            cout << "------------------------------------" << endl;
             break;
 
-        case '*':
+        case 3:
             cout << "a * b = " << a * b << endl;
+            cout << "------------------------------------" << endl;
             break;
 
-        case '/':
+        case 4:
             cout << "a / b = " << (float)a / b << endl;
+            cout << "------------------------------------" << endl;
             break;
 
-        case '%':
+        case 5:
             cout << "a % b = " << a % b << endl;
+            cout << "------------------------------------" << endl;
             break;
 
         case 0:
-            cout << "Exit" << endl;
+            cout << "Exit!" << endl;
             break;
 
         default:
             cout << "INVALID NUMBER!" << endl;
             break;
         }
-    }
+    } while (user != 0);
+}
+int main()
+{
+    calculator();
 }
