@@ -28,7 +28,6 @@ void calculator()
             cout << "a + b = " << a + b << endl;
             cout << "------------------------------------" << endl;
             break;
-
         case 2:
             cout << "a = ";
             cin >> a;
@@ -37,7 +36,6 @@ void calculator()
             cout << "a - b = " << a - b << endl;
             cout << "------------------------------------" << endl;
             break;
-
         case 3:
             cout << "a = ";
             cin >> a;
@@ -46,7 +44,6 @@ void calculator()
             cout << "a * b = " << a * b << endl;
             cout << "------------------------------------" << endl;
             break;
-
         case 4:
             cout << "a = ";
             cin >> a;
@@ -55,7 +52,6 @@ void calculator()
             cout << "a / b = " << (float)a / b << endl;
             cout << "------------------------------------" << endl;
             break;
-
         case 5:
             cout << "a = ";
             cin >> a;
@@ -64,11 +60,9 @@ void calculator()
             cout << "a % b = " << a % b << endl;
             cout << "------------------------------------" << endl;
             break;
-
         case 0:
             cout << "Exit!" << endl;
             break;
-
         default:
             cout << "INVALID NUMBER!" << endl;
             break;

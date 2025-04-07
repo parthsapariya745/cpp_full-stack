@@ -68,11 +68,13 @@ class checkingAccount : public bankAccount {
         this->overdraftLimit = overdraftLimit;
 
         if (withdrawalAmount <= getBalance() + overdraftLimit) { 
-            double calculate = (getBalance() + overdraftLimit) - withdrawalAmount; 
-            cout << "overdraft amount remaining: " << (getBalance() + overdraftLimit) << " - " << withdrawalAmount << " = " << calculate << endl;
+            double calculate = withdrawalAmount - getBalance(); 
+            double interest = (getBalance() * 5) / 100;
+            double total = calculate - interest;
+            cout << total << endl;
         }
         else {
-            cout << "!!The Withdrawl amount exceeds the overdraft limit!!" << endl;
+            cout << "!!The Withdrawal amount exceeds the overdraft limit!!" << endl;
         }
         cout << "----------------------------------------------" << endl;
     }
@@ -82,12 +84,18 @@ class fixedDepositAccount : public bankAccount {
     int term;
 
     public:
-    void calculateInterest(double interestRate,int term) {
-        this->term = term;
+    void calculateInterest(double interestRate,double amount) {
+        if (amount <= getBalance()) {
+            cout << "Enter F.D. duration in month: ";
+            cin >> term;
 
-        double interest = (getBalance() * interestRate * term) / 100;
-        cout << "F.D. interest: " << interest << endl;
-        cout << getBalance() << " + " << interest << " = " << getBalance() + interest;
+            double interest = (amount * interestRate * term) / 100;
+            cout << "F.D. interest: " << interest << endl;
+            cout << amount << " + " << interest << " = " << amount + interest;
+        }
+        else {
+            cout << "!!The F.D. amount exceeds the bank balance amount!!" << endl;
+        }
     }
 };
 int main() {
@@ -138,7 +146,7 @@ int main() {
     fixedDepositAccount obj3;
     obj3.value(accountNumber,accountHolderName,obj1.getBalance());
 
-    cout << "Enter F.D. duration in month: ";
-    cin >> term;
-    obj3.calculateInterest(7,term);
+    cout << "enter F.D. amount: ";
+    cin >> amount;
+    obj3.calculateInterest(7,amount);
 }
