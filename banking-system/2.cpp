@@ -108,20 +108,23 @@ int main() {
 
     cout << "----------------------------------------------" << endl;
 
-    savingAccount obj1;
-    obj1.value(accountNumber,accountHolderName,balance);
+    bankAccount bank;
+    bank.value(accountNumber,accountHolderName,balance);
 
     cout << "enter deposit amount: ";
     cin >> amount;
-    obj1.deposit(amount);
+    bank.deposit(amount);
 
     cout << "enter withdraw amount: ";
     cin >> amount;
-    obj1.withdraw(amount);
+    bank.withdraw(amount);
 
-    obj1.getBalance();
+    bank.getBalance();
     
-    obj1.displayAccountInfo();
+    bank.displayAccountInfo();
+
+    savingAccount obj1;
+    obj1.value(accountNumber,accountHolderName,balance);
 
     obj1.calculateInterest(5);
 

@@ -1,8 +1,10 @@
 #include <iostream>
 using namespace std;
 
-void calculator() {
+void calculator()
+{
     int user;
+    int a, b;
     do
     {
         cout << "Press 1 for Addition" << endl;
@@ -16,35 +18,49 @@ void calculator() {
         cout << "Enter your number: ";
         cin >> user;
 
-        int a, b;
-
-        cout << "a = ";
-        cin >> a;
-        cout << "b = ";
-        cin >> b;
         switch (user)
         {
         case 1:
+            cout << "a = ";
+            cin >> a;
+            cout << "b = ";
+            cin >> b;
             cout << "a + b = " << a + b << endl;
             cout << "------------------------------------" << endl;
             break;
 
         case 2:
+            cout << "a = ";
+            cin >> a;
+            cout << "b = ";
+            cin >> b;
             cout << "a - b = " << a - b << endl;
             cout << "------------------------------------" << endl;
             break;
 
         case 3:
+            cout << "a = ";
+            cin >> a;
+            cout << "b = ";
+            cin >> b;
             cout << "a * b = " << a * b << endl;
             cout << "------------------------------------" << endl;
             break;
 
         case 4:
+            cout << "a = ";
+            cin >> a;
+            cout << "b = ";
+            cin >> b;
             cout << "a / b = " << (float)a / b << endl;
             cout << "------------------------------------" << endl;
             break;
 
         case 5:
+            cout << "a = ";
+            cin >> a;
+            cout << "b = ";
+            cin >> b;
             cout << "a % b = " << a % b << endl;
             cout << "------------------------------------" << endl;
             break;
