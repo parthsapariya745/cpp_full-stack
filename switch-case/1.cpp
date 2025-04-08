@@ -78,7 +78,7 @@ int main()
             cout << "Exit!" << endl;
             break;
         default:
-            cout << "INVALID NUMBER!" << endl;
+            cout << "INVALID NUMBER!" << endl << endl;
             break;
         }
     } while (user != 0);
