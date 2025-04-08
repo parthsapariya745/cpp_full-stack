@@ -68,10 +68,8 @@ class checkingAccount : public bankAccount {
         this->overdraftLimit = overdraftLimit;
 
         if (withdrawalAmount <= getBalance() + overdraftLimit) { 
-            double calculate = withdrawalAmount - getBalance(); 
-            double interest = (getBalance() * 5) / 100;
-            double total = calculate - interest;
-            cout << total << endl;
+            double calculate = withdrawalAmount - (getBalance() + (getBalance() * 5) / 100); 
+            cout << withdrawalAmount << " - " << (getBalance() + (getBalance() * 5) / 100) << " = " << calculate << endl;
         }
         else {
             cout << "!!The Withdrawal amount exceeds the overdraft limit!!" << endl;
@@ -99,7 +97,7 @@ class fixedDepositAccount : public bankAccount {
     }
 };
 int main() {
-    cout << "----------Banking System----------" << endl << endl;
+    cout << endl << "----------Banking System----------" << endl << endl;
 
     int accountNumber,term;
     string accountHolderName;
@@ -146,7 +144,7 @@ int main() {
     fixedDepositAccount obj3;
     obj3.value(accountNumber,accountHolderName,obj1.getBalance());
 
-    cout << "enter F.D. amount: ";
+    cout << "Enter F.D. amount: ";
     cin >> amount;
     obj3.calculateInterest(7,amount);
 }
