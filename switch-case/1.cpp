@@ -1,6 +1,12 @@
 #include <iostream>
 using namespace std;
 
+void userValue(int &a, int &b) {
+    cout << "a = ";
+    cin >> a;
+    cout << "b = ";
+    cin >> b;
+}
 void add(int a, int b) {
     cout << "a + b = " << a + b << endl;
     cout << "------------------------------------" << endl;
@@ -24,8 +30,7 @@ void mode(int a, int b) {
 int main()
 {
     int user,a,b;
-    do
-    {
+    do {
         cout << "Press 1 for Addition" << endl;
         cout << "Press 2 for Subtraction" << endl;
         cout << "Press 3 for Multiplication" << endl;
@@ -36,42 +41,26 @@ int main()
 
         cout << "Enter your number: ";
         cin >> user;
-
         switch (user)
         {
         case 1:
-            cout << "a = ";
-            cin >> a;
-            cout << "b = ";
-            cin >> b;
+            userValue(a,b);
             add(a,b);
             break;
         case 2:
-            cout << "a = ";
-            cin >> a;
-            cout << "b = ";
-            cin >> b;
+            userValue(a,b);
             sub(a,b);
             break;
         case 3:
-            cout << "a = ";
-            cin >> a;
-            cout << "b = ";
-            cin >> b;
+            userValue(a,b);
             multi(a,b);
             break;
         case 4:
-            cout << "a = ";
-            cin >> a;
-            cout << "b = ";
-            cin >> b;
+            userValue(a,b);
             divison(a,b);
             break;
         case 5:
-            cout << "a = ";
-            cin >> a;
-            cout << "b = ";
-            cin >> b;
+            userValue(a,b);
             mode(a,b);
             break;
         case 0:
