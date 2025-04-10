@@ -1,4 +1,4 @@
-// Dynamic Memory Allocation //
+// Dynamic Memory Allocation with procedural //
 #include<iostream>
 using namespace std;
 
