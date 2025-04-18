@@ -11,12 +11,23 @@ class node {
     public:
     void fun() {
         node *head = new node();
+        head->data = 10;
+        head->prev = NULL;
+        head->next = NULL;
+        
         node *n2 = new node();
-        node *n3 = new node();
+        n2->data = 20;
+        n2->prev = head;
+        n2->next = NULL;
 
-        head->data = 10; head->prev = NULL; head->next = n2;
-        n2->data = 20; n2->prev = head; n2->next = n3;
-        n3->data = 30; n3->prev = n2; n3->next = NULL;
+        head->next = n2;
+        
+        node *n3 = new node();
+        n3->data = 30;
+        n3->prev = n2;
+        n3->next = NULL;
+
+        n2->next = n3;
         
         cout << "Head Prev  : " << head->prev << endl << "n1 data    : " << head->data << endl << "n2 address : " << head->next << endl << endl; // head (n1)
 
