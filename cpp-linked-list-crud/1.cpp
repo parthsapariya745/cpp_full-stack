@@ -12,16 +12,16 @@ public:
         next = NULL;
     }
 };
-void insertBegin(int Val, node *&head) {
-    node *temp = new node(Val);
+void insertBegin(int val, node *&head) {
+    node *temp = new node(val);
 
     if (head != NULL) {
         temp->next = head;
     } 
     head = temp;
 }
-void insertEnd(int Val, node *&head) {
-    node *n1 = new node(Val);
+void insertEnd(int val, node *&head) {
+    node *n1 = new node(val);
 
     if (head == NULL) {
         head = n1;
@@ -34,71 +34,76 @@ void insertEnd(int Val, node *&head) {
         temp->next = n1;
     }
 }
-void insertAnyPosition(int anyPosition, int Val, node *&head) {
+void insertAnyPosition(int anyPosition, node *&head) {
     node *temp = head;
+    int val;
 
     while (temp != NULL) {
         if (temp->data == anyPosition) {
             cout << "Enter the value: ";
-            cin >> Val;
+            cin >> val;
 
-            node *n1 = new node(Val);
+            node *n1 = new node(val);
             n1->next = temp->next;      
             temp->next = n1;
         }
         temp = temp->next;  
     }
+    cout << "-----------------------------" << endl;
 }
-void read(int Val, node *head) {
+void read(int val, node *head) {
     node *temp = head;
 
     while (temp != NULL) {
-        cout << temp->data << " - " << temp->next << endl;
+        cout << temp->data << " ";
         temp = temp->next;
     }
-    cout << "-----------------------------" << endl;
+    cout << endl << "-----------------------------" << endl;
 }
-void update(int anyPosition, int Val, node *head) {
+void update(int anyPosition, node *head) {
     node *temp = head;
+    int val;
 
     while (temp != NULL) {
         if (temp->data == anyPosition) {
-            cout << "Enter the value: ";
-            cin >> Val;
+            cout << "Enter update value: ";
+            cin >> val;
 
-            temp->data = Val;
+            temp->data = val;
         }
         temp = temp->next;  
     }
     cout << "-----------------------------" << endl;
 }
-void remove(int deletePosition, node *head) {
+void remove(int deletePosition, node *&head) {
     node *temp = head;
     
-    while (temp != NULL) {
-        if (deletePosition == 1) {
-            node *n1 = NULL;
-            head->next = n1;
-            n1 = head;
-            head = NULL;
+    if (deletePosition == 1) {
+        head = head->next;
+        temp = NULL;
+    }
+    else {
+        int count = 1;
+        while (temp != NULL && count < deletePosition - 1) {
+            temp = temp->next;
+            count++;
         }
-        else {
-            
-            break;
-        }
-        temp = temp->next;  
+        node *n1 = temp->next;
+        temp->next = n1->next;
+        n1 = NULL;
     }
     cout << "-----------------------------" << endl;
 }
 int main() {
-    int user, Val, anyPosition, deletePosition;
+    int user, val, anyPosition, deletePosition;
     node *head = NULL;
     do {
-        cout << "Press 1 Create / Insert" << endl;
-        cout << "Press 2 read" << endl;
-        cout << "Press 3 update" << endl;
-        cout << "Press 4 delete" << endl;
-        cout << "Press 0 exit" << endl;
+        cout << endl << "-------- O P T I O N --------" << endl << endl;
+        cout << "1. Create / Insert" << endl;
+        cout << "2. Read" << endl;
+        cout << "3. Update" << endl;
+        cout << "4. Delete / Remove" << endl;
+        cout << "0. Exit" << endl;
         cout << "-----------------------------" << endl;
 
         cout << "Enter your number: ";
@@ -107,33 +112,37 @@ int main() {
         switch (user) {
         case 1:
             cout << endl << "-------- I N S E R T --------" << endl << endl;
-            cout << "Press 1 beginning of the list" << endl;
-            cout << "Press 2 ending of the list" << endl;
-            cout << "Press 3 any position of the list" << endl;
+            cout << "1. beginning of the list" << endl;
+            cout << "2. ending of the list" << endl;
+            cout << "3. any position of the list" << endl;
+            cout << "0. Exit" << endl;
             cout << "-----------------------------" << endl;
 
             int insertPos;
 
-            cout << "Choose your insert number: ";
+            cout << "Choose your insert option: ";
             cin >> insertPos;
 
             if (insertPos >= 1 && insertPos <= 2) {
                 cout << "Enter the value: ";
-                cin >> Val;
+                cin >> val;
             }
             cout << "-----------------------------" << endl;
             switch (insertPos) {
             case 1: // begin
-                insertBegin(Val, head);
+                insertBegin(val, head);
                 break;
             case 2: // end
-                insertEnd(Val, head);
+                insertEnd(val, head);
                 break;
             case 3: // any position
                 cout << "Enter value position: ";
                 cin >> anyPosition;
                 
-                insertAnyPosition(anyPosition, Val, head);
+                insertAnyPosition(anyPosition, head);
+                break;
+            case 0:
+                cout << endl << "-------- E X I T --------" << endl << endl;
                 break;
             default:
                 cout << "Invalid position" << endl << endl;
@@ -142,30 +151,49 @@ int main() {
             }
             break;
         case 2:
-            cout << endl << "-------- R E A D --------" << endl << endl;
-            read(Val, head);
+            if (head != NULL) {
+                cout << endl << "-------- R E A D --------" << endl << endl;
+                read(val, head);
+            }
+            else {
+                cout << "please press 1 insert value" << endl;
+                cout << "-----------------------------" << endl;
+            }
             break;
         case 3:
-            cout << endl << "-------- U P D A T E --------" << endl << endl;
+            if (head != NULL) {
+                cout << endl << "-------- U P D A T E --------" << endl << endl;
 
-            cout << "Enter value position: ";
-            cin >> anyPosition;
+                cout << "Enter value position: ";
+                cin >> anyPosition;
 
-            update(anyPosition, Val, head);
+                update(anyPosition, head);
+            }
+            else {
+                cout << "please press 1 insert value" << endl;
+                cout << "-----------------------------" << endl;
+            }
             break;
         case 4:
-            cout << endl << "-------- D E L E T E --------" << endl << endl;
+            if (head != NULL) {
+                cout << endl << "-------- D E L E T E --------" << endl << endl;
 
-            cout << "Enter your delete position: ";
-            cin >> deletePosition;
+                cout << "Enter your delete position: ";
+                cin >> deletePosition;
             
-            remove(deletePosition, head);
+                remove(deletePosition, head);
+            }
+            else {
+                cout << "please press 1 insert value" << endl;
+                cout << "-----------------------------" << endl;
+            }
             break;
         case 0:
-            cout << "E X I T!" << endl;
+            cout << endl << "-------- E X I T --------" << endl << endl;
             break;
         default:
             cout << "Invalid number" << endl;
+            cout << "-----------------------------" << endl;
             break;
         }
     } while (user != 0);
