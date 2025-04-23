@@ -110,8 +110,7 @@ int main() {
         cin >> user;
 
         switch (user) {
-        case 1:
-            cout << endl << "-------- I N S E R T --------" << endl << endl;
+        case 1: // I N S E R T
             cout << "1. beginning of the list" << endl;
             cout << "2. ending of the list" << endl;
             cout << "3. any position of the list" << endl;
@@ -129,20 +128,20 @@ int main() {
             }
             cout << "-----------------------------" << endl;
             switch (insertPos) {
-            case 1: // begin
+            case 1: // Begin
                 insertBegin(val, head);
                 break;
-            case 2: // end
+            case 2: // End
                 insertEnd(val, head);
                 break;
-            case 3: // any position
+            case 3: // Any Position
                 cout << "Enter value position: ";
                 cin >> anyPosition;
                 
                 insertAnyPosition(anyPosition, head);
                 break;
             case 0:
-                cout << endl << "-------- E X I T --------" << endl << endl;
+                cout << endl << "- E X I T -" << endl << endl;
                 break;
             default:
                 cout << "Invalid position" << endl << endl;
@@ -150,9 +149,8 @@ int main() {
                 break;
             }
             break;
-        case 2:
+        case 2: // R E A D
             if (head != NULL) {
-                cout << endl << "-------- R E A D --------" << endl << endl;
                 read(val, head);
             }
             else {
@@ -160,10 +158,8 @@ int main() {
                 cout << "-----------------------------" << endl;
             }
             break;
-        case 3:
+        case 3: // U P D A T E
             if (head != NULL) {
-                cout << endl << "-------- U P D A T E --------" << endl << endl;
-
                 cout << "Enter value position: ";
                 cin >> anyPosition;
 
@@ -174,10 +170,8 @@ int main() {
                 cout << "-----------------------------" << endl;
             }
             break;
-        case 4:
+        case 4: // D E L E T E
             if (head != NULL) {
-                cout << endl << "-------- D E L E T E --------" << endl << endl;
-
                 cout << "Enter your delete position: ";
                 cin >> deletePosition;
             
