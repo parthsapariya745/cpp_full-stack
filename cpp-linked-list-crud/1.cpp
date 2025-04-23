@@ -51,7 +51,7 @@ void insertAnyPosition(int anyPosition, node *&head) {
     }
     cout << "-----------------------------" << endl;
 }
-void read(int val, node *head) {
+void read(node *head) {
     node *temp = head;
 
     while (temp != NULL) {
@@ -80,6 +80,7 @@ void remove(int deletePosition, node *&head) {
     
     if (deletePosition == 1) {
         head = head->next;
+        delete temp;
         temp = NULL;
     }
     else {
@@ -90,6 +91,7 @@ void remove(int deletePosition, node *&head) {
         }
         node *n1 = temp->next;
         temp->next = n1->next;
+        delete n1;
         n1 = NULL;
     }
     cout << "-----------------------------" << endl;
@@ -151,7 +153,7 @@ int main() {
             break;
         case 2: // R E A D
             if (head != NULL) {
-                read(val, head);
+                read(head);
             }
             else {
                 cout << "please press 1 insert value" << endl;
