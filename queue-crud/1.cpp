@@ -7,46 +7,34 @@ void enqueue(int val, int queueSize, int &end, int queue[]) {
         end++;
         queue[end] = val;
     }    
-    else {
-        cout << "Queue is Full" << endl;
-    }
-    for (int i = 0; i <= end; i++) {
-        cout << queue[i] << " ";
-    }
+    else cout << endl << "Queue is Full" << endl;
+    for (int i = 0; i <= end; i++) cout << queue[i] << " ";
     cout << endl << "--------------------------------------" << endl;
 }
 void dequeue(int &end, int queue[]) {
-    for (int i = 0; i <= end; i++) {
-        queue[i] = queue[i + 1];
-    }
+    for (int i = 0; i <= end; i++) queue[i] = queue[i + 1];
     end--;
-    for (int i = 0; i <= end; i++) {
-        cout << queue[i] << " ";
-    }
+    for (int i = 0; i <= end; i++) cout << queue[i] << " ";
     cout << endl << "--------------------------------------" << endl;
 }
-void front(int &start, int queue[]) {
-    cout << "Front value: " << queue[start] << endl << "--------------------------------------" << endl;
+void front(int &start, int &end, int queue[]) {
+    if (end >= start) cout << "Front value: " << queue[start] << endl;
+    else cout << "Front value does not exist!" << endl;
+    cout << "--------------------------------------" << endl;
 }
-void rear(int &end, int queue[]) {
-    cout << "Rear value: " << queue[end] << endl << "--------------------------------------" << endl;
+void rear(int &start, int &end, int queue[]) {
+    if (end >= start) cout << "Rear value: " << queue[end] << endl;
+    else cout << "Rear value does not exist!" << endl;
+    cout << "--------------------------------------" << endl;
 }
 void isEmpty(int &end, int queue[]) {
-    if (end == -1) {
-        cout << "Queue is Empty" << endl;
-    }
-    else {
-        cout << "Queue is not Empty" << endl;
-    }
+    if (end == -1) cout << "Queue is Empty" << endl;
+    else cout << "Queue is not Empty" << endl;
     cout << "--------------------------------------" << endl;
 }
 void isFull(int queueSize, int &end, int queue[]) {
-    if (end == queueSize - 1) {
-        cout << "Queue is Full" << endl;
-    }
-    else {
-        cout << "Queue is not Full" << endl;
-    }
+    if (end == queueSize - 1) cout << "Queue is Full" << endl;
+    else cout << "Queue is not Full" << endl;
     cout << "--------------------------------------" << endl;
 }
 void size(int &end, int queue[]) {
@@ -54,9 +42,9 @@ void size(int &end, int queue[]) {
 }
 int main() {
     int option, queueSize, val, start = 0, end = -1;
-
     cout << "Enter queue size: ";
     cin >> queueSize;
+    
     int *queue = new int[queueSize];  
     do {
         cout << "--- O P T I O N ---" << endl;
@@ -75,10 +63,10 @@ int main() {
             dequeue(end, queue);
             break;
         case 3:
-            front(start, queue);
+            front(start, end, queue);
             break;
         case 4:
-            rear(end, queue);
+            rear(start, end, queue);
             break;
         case 5:
             isEmpty(end, queue);
@@ -91,6 +79,7 @@ int main() {
             break;
         case 0:
             cout << "- E X I T -" << endl;
+            delete[] queue;
             break;
         default:
             cout << "Invalid option" << endl;
