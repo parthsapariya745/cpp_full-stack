@@ -5,9 +5,12 @@ using namespace std;
 void enqueue(int val, int queueSize, int &end, int queue[]) {
     if (end < queueSize - 1) {
         end++;
-    }    
-    for (int i = 0; i <= end; i++) {
         queue[end] = val;
+    }    
+    else {
+        cout << "Queue is Full" << endl;
+    }
+    for (int i = 0; i <= end; i++) {
         cout << queue[i] << " ";
     }
     cout << endl << "--------------------------------------" << endl;
