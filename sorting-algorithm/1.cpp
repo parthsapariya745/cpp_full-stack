@@ -1,9 +1,9 @@
+// Bubble sort //
 #include<iostream>
 using namespace std;
 
 int main() {
     int size, temp;
-    
     cout << "Enter size of array: ";
     cin >> size;
 
@@ -11,6 +11,10 @@ int main() {
     for (int i = 0; i < size; i++) {
         cout << "box[" << i << "] = ";
         cin >> box[i];
+    }
+    cout << "Elements of array : ";
+    for (int i = 0; i < size; i++) {
+        cout << box[i] << " ";
     }
     for (int i = 0; i < size - 1; i++) {
         for (int j = 0; j < size - 1; j++) {
@@ -21,7 +25,7 @@ int main() {
             }   
         }
     } 
-    cout << "Assending order: ";
+    cout << endl << "Assending order   : ";
     for (int i = 0; i < size; i++) {
         cout << box[i] << " ";
     }

@@ -15,22 +15,16 @@ public:
 void insertBegin(int val, node *&head) {
     node *temp = new node(val);
 
-    if (head != NULL) {
-        temp->next = head;
-    } 
+    if (head != NULL) temp->next = head;
     head = temp;
 }
 void insertEnd(int val, node *&head) {
     node *n1 = new node(val);
 
-    if (head == NULL) {
-        head = n1;
-    } 
+    if (head == NULL) head = n1;
     else {
         node *temp = head;
-        while (temp->next != NULL) {
-            temp = temp->next;
-        }
+        while (temp->next != NULL) temp = temp->next;
         temp->next = n1;
     }
 }
@@ -146,19 +140,13 @@ int main() {
                 cout << endl << "- E X I T -" << endl << endl;
                 break;
             default:
-                cout << "Invalid position" << endl << endl;
-                cout << "-----------------------------" << endl;
+                cout << "Invalid position" << endl << endl << "-----------------------------" << endl;
                 break;
             }
             break;
         case 2: // R E A D
-            if (head != NULL) {
-                read(head);
-            }
-            else {
-                cout << "please press 1 insert value" << endl;
-                cout << "-----------------------------" << endl;
-            }
+            if (head != NULL) read(head);
+            else cout << "please press 1 insert value" << endl << "-----------------------------" << endl;
             break;
         case 3: // U P D A T E
             if (head != NULL) {
@@ -167,10 +155,7 @@ int main() {
 
                 update(anyPosition, head);
             }
-            else {
-                cout << "please press 1 insert value" << endl;
-                cout << "-----------------------------" << endl;
-            }
+            else cout << "please press 1 insert value" << endl << "-----------------------------" << endl;
             break;
         case 4: // D E L E T E
             if (head != NULL) {
@@ -179,17 +164,13 @@ int main() {
             
                 remove(deletePosition, head);
             }
-            else {
-                cout << "please press 1 insert value" << endl;
-                cout << "-----------------------------" << endl;
-            }
+            else cout << "please press 1 insert value" << endl << "-----------------------------" << endl;
             break;
         case 0:
             cout << endl << "-------- E X I T --------" << endl << endl;
             break;
         default:
-            cout << "Invalid number" << endl;
-            cout << "-----------------------------" << endl;
+            cout << "Invalid number" << endl << "-----------------------------" << endl;
             break;
         }
     } while (user != 0);
