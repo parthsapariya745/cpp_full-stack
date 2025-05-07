@@ -13,9 +13,8 @@ int main() {
         cin >> box[i];
     }
     cout << "Elements of array : ";
-    for (int i = 0; i < size; i++) {
-        cout << box[i] << " ";
-    }
+    for (int i = 0; i < size; i++) cout << box[i] << " ";
+    
     for (int i = 0; i < size - 1; i++) {
         for (int j = 0; j < size - 1; j++) {
             if (box[j] > box[j + 1]) {
@@ -26,7 +25,5 @@ int main() {
         }
     } 
     cout << endl << "Assending order   : ";
-    for (int i = 0; i < size; i++) {
-        cout << box[i] << " ";
-    }
+    for (int i = 0; i < size; i++) cout << box[i] << " ";
 }
