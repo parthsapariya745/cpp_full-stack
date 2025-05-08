@@ -16,9 +16,10 @@ int main() {
     for (int i = 0; i < size; i++) cout << box[i] << " ";
 
     for (int i = 0; i < size - 1; i++) {
-        min = i; 
         for (int j = i; j < size; j++) {
-            if (box[j] < box[min]) min = j; 
+            if (box[j] < box[min]) { 
+                min = j; 
+            }
         }
         temp = box[i]; 
         box[i] = box[min];           
