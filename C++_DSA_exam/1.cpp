@@ -57,12 +57,12 @@ void read(node *head) {
     }
     cout << endl;
 }
-void update(int anyPosition, node *head) {
+void update(int position, node *head) {
     node *temp = head;
     int val;
 
     while (temp != NULL) {
-        if (temp->data == anyPosition) {
+        if (temp->data == position) {
             cout << "Enter update value: ";
             cin >> val;
 
@@ -71,17 +71,17 @@ void update(int anyPosition, node *head) {
         temp = temp->next;  
     }
 }
-void remove(int deletePosition, node *&head) {
+void remove(int position, node *&head) {
     node *temp = head;
     
-    if (deletePosition == 1) {
+    if (position == 1) {
         head = head->next;
         delete temp;
         temp = NULL;
     }
     else {
         int count = 1;
-        while (temp != NULL && count < deletePosition - 1) {
+        while (temp != NULL && count < position - 1) {
             temp = temp->next;
             count++;
         }
