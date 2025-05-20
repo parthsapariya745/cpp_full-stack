@@ -3,8 +3,8 @@
 using namespace std;
 
 void merge(int box[], int low, int mid, int high) {
-    int temp1 = mid - low + 1; // 0 - 0 + 1 = temp1 = 1
-    int temp2 = high - mid;    // 1 - 0     = temp2 = 1
+    int temp1 = mid - low + 1; 
+    int temp2 = high - mid;    
 
     int left[temp1]; 
     for (int i = 0; i < temp1; i++) {
@@ -47,7 +47,7 @@ void mergeSort(int box[], int low, int high) {
     mergeSort(box, low, mid);
     mergeSort(box, mid + 1, high);
 
-    merge(box, low, mid, high); // 0 0 1
+    merge(box, low, mid, high); 
 }
 int main() {
     int size, low, high;
